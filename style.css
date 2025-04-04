@@ -96,3 +96,37 @@ button:hover{
     from { transform: rotateY(90deg); opacity: 0; }
     to { transform: rotateY(0); opacity: 1; }
 }
+
+#newSection {
+  padding: 40px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.section-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.description h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
