@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang ="el">
+<head>
+	<meta charset ="UTF-8">
+	<meta	name="viewport"	content = "width=device-width,	initial-scale=1.0">
+	<title>Η πρώτη μου ιστοσελίδα</title>
+	<link rel ="stylesheet" href="style.css">
+	</head>
+<body>
+	<h1 class="fadeIn">🚀Καλώς ήρθατε στην Διαδραστική Σελίδα!</h1>
+	<p class="slideIn">Δοκιμάστε τα κουμπιά και δείτε τα εφέ! 👇</p>
+
+	<div class="button-container">
+		<button id ="changeColor">🎨 Αλλαγή Χρώματος</button>
+		<button id ="animateText">✨ Κείμενο με animation</button>
+		<button id="playGame">🎮 Παίξε το mini-game</button>
+		<button id = "timer">⌚ Χρονόμετρο</button>
+	</div>
+	<div id ="score" class="hidden"></div>
+	<div id ="game" class="hidden">
+		<p>🎯 Κάνε κλικ στο κουτί όσο πιο γρήγορα μπορείς!</p>
+		<div id ="box"></div>
+	</div>
+<audio id ="clickSound" src="click.wav"></audio>	
+	<script src="script.js"></script>
+</body>
+</html>
