@@ -42,18 +42,25 @@ document.getElementById("changeColor").addEventListener("click", function () {
 // Function to display the current time in the top-right corner
 document.getElementById("time").addEventListener("click", function() {
     const clockElement = document.getElementById("clock"); // Get the clock div
-    const currentTime = new Date(); // Get the current date/time
-    const hours = currentTime.getHours().toString().padStart(2, '0');
-    const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-    const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+    clockElement.classList.remove("hidden"); // Ensure the clock is visible
 
-    // Format the time as HH:MM:SS
-    clockElement.innerHTML = `Τρέχουσα ώρα: ${hours}:${minutes}:${seconds}`;
-    
-    // Ensure the clock is visible
-    clockElement.classList.remove("hidden");
+    // Function to update the time every second
+    function updateClock() {
+        const currentTime = new Date(); // Get the current date/time
+        const hours = currentTime.getHours().toString().padStart(2, '0');
+        const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+        const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+
+        // Format the time as HH:MM:SS
+        clockElement.innerHTML = `Τρέχουσα ώρα: ${hours}:${minutes}:${seconds}`;
+    }
+
+    // Update the clock immediately when clicked
+    updateClock();
+
+    // Set an interval to update the clock every second
+    setInterval(updateClock, 1000); // Update every 1000ms (1 second)
 });
-
 
 
 document.getElementById("animateText").addEventListener("click", function () {
