@@ -5,7 +5,7 @@
 	<meta	name="viewport"	content = "width=device-width,	initial-scale=1.0">
 	<title>Η πρώτη μου ιστοσελίδα</title>
 	<link rel ="stylesheet" href="style.css">
-	</head>
+</head>
 <body>
 	<h1 class="fadeIn">🚀Καλώς ήρθατε στην Διαδραστική Σελίδα!</h1>
 	<p class="slideIn">Δοκιμάστε τα κουμπιά και δείτε τα εφέ! 👇</p>
@@ -14,24 +14,28 @@
 		<button id ="changeColor">🎨 Αλλαγή Χρώματος</button>
 		<button id ="animateText">✨ Κείμενο με animation</button>
 		<button id="playGame">🎮 Παίξε το mini-game</button>
-		<button id = "timer">⌚ Χρονόμετρο</button>
+		<button id = "time">⌚ Show Clock</button>
 	</div>
+
+	<!-- Clock div (this will be fixed at the top right) -->
+	<div id="clock" class="hidden"></div>
+
 	<div id ="score" class="hidden"></div>
 	<div id ="game" class="hidden">
 		<p>🎯 Κάνε κλικ στο κουτί όσο πιο γρήγορα μπορείς!</p>
 		<div id ="box"></div>
 	</div>
 	<section id="newSection">
-  <div class="content-container">
-    <!-- Online Image URL -->
-	<img src="li-zhang-IiLVwx3e8bk-unsplash.jpg" alt="Beautiful nature" class="section-image">
-    <div class="description">
-      <h2>Τίτλος του Section</h2>
-      <p>Αυτή είναι η περιγραφή του section, όπου μπορείς να προσθέσεις περισσότερες πληροφορίες ή να εξηγήσεις το περιεχόμενο της εικόνας.</p>
-    </div>
-  </div>
-</section>
-<audio id ="clickSound" src="click.wav"></audio>	
+		<div class="content-container">
+			<!-- Online Image URL -->
+			<img src="li-zhang-IiLVwx3e8bk-unsplash.jpg" alt="Beautiful nature" class="section-image">
+			<div class="description">
+				<h2>Τίτλος του Section</h2>
+				<p>Αυτή είναι η περιγραφή του section, όπου μπορείς να προσθέσεις περισσότερες πληροφορίες ή να εξηγήσεις το περιεχόμενο της εικόνας.</p>
+			</div>
+		</div>
+	</section>
+	<audio id ="clickSound" src="click.wav"></audio>	
 	<script src="script.js"></script>
 </body>
 </html>

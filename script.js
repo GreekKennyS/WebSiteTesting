@@ -1,5 +1,6 @@
 var score = 0;
 var timer = 60; // Timer starts at 60 seconds
+var gameInterval; // To store the interval reference
 
 document.getElementById("changeColor").addEventListener("click", function () {
     // Generate a random background color
@@ -38,6 +39,22 @@ document.getElementById("changeColor").addEventListener("click", function () {
     }
 });
 
+// Function to display the current time in the top-right corner
+document.getElementById("time").addEventListener("click", function() {
+    const clockElement = document.getElementById("clock"); // Get the clock div
+    const currentTime = new Date(); // Get the current date/time
+    const hours = currentTime.getHours().toString().padStart(2, '0');
+    const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+    const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+
+    // Format the time as HH:MM:SS
+    clockElement.innerHTML = `Τρέχουσα ώρα: ${hours}:${minutes}:${seconds}`;
+    
+    // Ensure the clock is visible
+    clockElement.classList.remove("hidden");
+});
+
+
 
 document.getElementById("animateText").addEventListener("click", function () {
     const p = document.querySelector(".slideIn");
@@ -70,11 +87,11 @@ document.getElementById("animateText").addEventListener("click", function () {
 });
 
 
-
-
-document.getElementById("playGame").addEventListener("click", function () {
+document.getElementById("playGame").addEventListener("click", function() {
+    // Toggle visibility of the game and score sections
     document.getElementById("game").classList.toggle("hidden");
     document.getElementById("score").classList.toggle("hidden");
+    document.getElementById("newSection").classList.toggle("hidden");
 
     // Reset score and timer when the game starts
     score = 0;
@@ -83,29 +100,31 @@ document.getElementById("playGame").addEventListener("click", function () {
     // Update the display immediately
     document.getElementById("score").innerHTML = "Score: " + score + " Timer: " + timer;
 
-    // Start the timer countdown
-    let gameInterval = setInterval(() => {
+    // Clear any previous intervals and start the timer countdown
+    clearInterval(gameInterval); // Stop any existing interval
+    gameInterval = setInterval(() => {
         if (timer > 0) {
             timer--;
             document.getElementById("score").innerHTML = "Score: " + score + " Timer: " + timer;
         } else {
-            clearInterval(gameInterval);
+            clearInterval(gameInterval); // Stop the timer
             alert("Game Over! Your final score is: " + score);
         }
     }, 1000); // Update every second
 });
 
-document.getElementById("box").addEventListener("click", function () {
+// Code for the mini-game (clicking the box to increase the score)
+document.getElementById("box").addEventListener("click", function() {
     score += 1;
     document.getElementById("score").innerHTML = "Score: " + score + " Timer: " + timer;
 
-    // Randomize position and size
+    // Randomize position and size of the box
     this.style.top = Math.random() * 300 + "px";
     this.style.left = Math.random() * 500 + "px";
     this.style.width = Math.random() * 200 + 50 + "px";
     this.style.height = Math.random() * 200 + 50 + "px";
 
-    // Randomize color
+    // Randomize the color of the box
     this.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
 });
 

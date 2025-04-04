@@ -58,22 +58,22 @@ button:hover{
 }
 
 /*Mini-game*/
-#game{
-	margin-top: 20px;
+#game {
+  margin-top: 20px;
 }
 
 .hidden{
 	display: none;
 }
 
-#box{
-	width: 50px;
-	height: 50px;
-	background-color:red;
-	margin:auto;
-	cursor:pointer;
-	position:relative;
-	transition:all 0.3s;
+#box {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  margin: auto;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
 }
 
 
@@ -92,9 +92,30 @@ button:hover{
     to { transform: rotate(0deg); opacity: 1; }
 }
 
+#clock {
+  font-size: 2rem;
+  color: white;
+  background-color: #333;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
 @keyframes flip {
     from { transform: rotateY(90deg); opacity: 0; }
     to { transform: rotateY(0); opacity: 1; }
+}
+#clock {
+  font-size: 2rem;
+  color: white;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  position: fixed; /* Fixes the clock in the top-right corner */
+  top: 20px; /* Adjust distance from the top */
+  right: 20px; /* Adjust distance from the right */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
 #newSection {
@@ -129,4 +150,14 @@ button:hover{
   font-size: 16px;
   color: #555;
   line-height: 1.6;
+}
+#score {
+  font-size: 24px;
+  color: white;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  display: inline-block;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  border-radius: 5px;
 }
