@@ -1,0 +1,835 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia&family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* Kagkasidis θετω μερικες μεταβλητες για χρωματα (lightmode/darkmode) */
+:root {
+    --dark--color-primary: #000;
+    --darkgrey--color-primary: #111;
+    --darkwhite--color-list: #333;
+    --dark555--color: #555;
+    --color-foreground: #fff;
+    --color-body-primary: #4a3b32;
+    --color-body-background: #f5f0e6;
+    --color-header-content-primary: #5D4037;
+    --color-nav-link-text: rgba(255, 255, 255, 0.75);
+}
+/*Reset before and after too not only '*' Kagkasidis */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/*Kagkasidis*/
+.main-container {
+    display: flex;
+    min-height: calc(100vh - 100px);
+    /* flex-wrap: wrap; */
+}
+/*Kagkasidis*/
+.main-content {
+    order: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 360px;
+}
+
+body {
+    padding: 0; /*Kagkasidis*/
+    margin: 0;  /*Kagkasidis*/
+    min-height: 100vh;  /*Kagkasidis*/
+    /* Kagkasidis */
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--color-body-primary);/*Kagkasidis*/
+    background-color: var(--color-body-background);/*Kagkasidis*/
+    overflow-x: hidden;
+    
+}
+/*Kagkasidis*/
+body.darkmode {
+    background-color: var(--dark--color-primary);
+    color: var(--dark--color-background);
+}
+/*Kagkasidis*/
+body.lightmode {
+    color: var(--color-body-primary);
+    background-color: var(--color-body-background);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+
+}
+
+h1,
+h2 {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    color: #8B4513;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.6em;
+}
+/*Kagkasidis*/
+.darkmode h1,
+.darkmode h2 {
+    color: var(--color-foreground);
+}
+/*Kagkasidis*/
+.lightmode h1,
+.lightmode h2 {
+    color: #8B4513;
+}
+
+p {
+    margin-bottom: 18px;
+    color: #4a3b32;
+}
+/*Kagkasidis*/
+body.darkmode p {
+    color: var(--color-foreground);
+}
+/*Kagkasidis*/
+body.lightmode p {
+    color: #4a3b32;
+}
+
+a {
+    color: #a0522d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+/*Kagkasidis*/
+.darkmode a {
+    color: var(--color-foreground);
+}
+/*Kagkasidis*/
+.lightmode a {
+    color: #a0522d;
+}
+
+a:hover {
+    color: #8B4513;
+}
+
+.header {
+    background-color: var(--color-header-content-primary);/*Kagkasidis*/
+    display: flex;/*Kagkasidis*/
+    width: 100%;
+    /* color: #f5f0e6; 
+    padding: 15px 0; 
+    position: fixed;
+    top: 0; */
+    /* z-index: 1000; */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);  */
+}
+
+/*Kagkasidis*/
+.darkmode .header {
+    background-color: var(--darkgrey--color-primary);
+}
+
+/*Kagkasidis*/
+.lightmode .header {
+    background-color: var(--color-header-content-primary);
+}
+
+/*Kagkasidis*/
+.header_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    min-height: 60px;
+    min-width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+/*Kagkasidis*/
+ul {
+    list-style: none;
+}
+
+/*Kagkasidis*/
+.logo {
+    display: flex;
+    order: 0;
+}
+
+/*Kagkasidis*/
+.logo_img {
+    height: 80px;
+    display: block;
+}
+
+/*Kagkasidis*/
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    flex-flow: row;
+}
+/*Kagkasidis*/
+.nav_item {
+    display: flex;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/*Kagkasidis*/
+.nav_list {
+    display: flex;
+}
+
+/*Kagkasidis*/
+.nav_link {
+    color: var(--color-nav-link-text);
+    font-size: 15px;
+    /* transition: all 0.4s; */
+}
+
+/*Kagkasidis*/
+.lightmode .nav_link {
+    color: var(--color-nav-link-text);
+    text-decoration: none;
+}
+
+
+.nav_link:hover,
+.nav_link:focus {
+    color: rgba(255, 255, 255, 1);
+}
+
+
+/* header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+/* .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #f5f0e6; 
+}
+.logo-container .subtitle {
+    margin: 0 0 0 15px;
+    font-size: 0.9em;
+    color: #e0d8c8; 
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+} */
+
+/* nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #f5f0e6; 
+    font-weight: 500;  
+    padding: 5px 0;
+    position: relative;
+    font-family: 'Georgia', serif; 
+    font-size: 1.05em;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c0a080; 
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+} */
+
+
+.hero-section {
+    background-color: rgb(224, 216, 200);
+    background: linear-gradient(rgba(224, 216, 200, 0.7), rgb(224, 216, 200, 0.9)), url('images/entrance.jpg') no-repeat center center/cover;
+    color: #4a3b32;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+/*Kagkasidis*/
+.darkmode .hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+        url('images/entrance.jpg') no-repeat center center/cover;
+}
+/*Kagkasidis*/
+.lightmode .hero-section {
+    background: linear-gradient(rgba(224, 216, 200, 0.7), rgb(224, 216, 200, 0.9)), url('images/entrance.jpg') no-repeat center center/cover;
+}
+
+.hero-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    border-bottom: none;
+    color: #8B4513;
+}
+/*Kagkasidis*/
+.darkmode .hero-section h2 {
+    color: var(--color-foreground);
+}
+/*Kagkasidis*/
+.lightmode .hero-section h2 {
+    color: #8B4513;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 35px;
+    color: #5c4d43;
+    max-width: 700px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #8B4513;
+    color: #f5f0e6;
+    padding: 12px 30px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid #7a3c0f;
+}
+/*Kagkasidis*/
+.darkmode .cta-button {
+    background: var(--dark--color-primary);
+    border: 1px solid var(--dark--color-primary);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+/*Kagkasidis*/
+.lightmode .cta-button {
+    background: #8B4513;
+    color: #f5f0e6;
+    border: 1px solid #7a3c0f;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #a0522d;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+/*Kagkasidis*/
+.darkmode .cta-button:hover {
+    background-color: var(--dark--color-primary);
+}
+/*Kagkasidis*/
+.lightmode .cta-button:hover {
+    background-color: #a0522d;
+}
+
+.content-section {
+    padding: 70px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out 0.2s;
+}
+
+.content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-section.alt-bg {
+    background-color: #e0d8c8;
+}
+/*Kagkasidis*/
+.lightmode .content-section.alt-bg {
+    background-color: #e0d8c8;
+}
+/*Kagkasidis*/
+.darkmode .content-section.alt-bg {
+    background-color: var(--darkwhite--color-list);
+}
+/*Kagkasidis*/
+.darkmode #programs {
+    background-color: var(--darkwhite--color-list);
+}
+/*Kagkasidis*/
+.lightmode #programs {
+    background-color: #e0d8c8;
+}
+
+.programs-list {
+    list-style: none;
+    padding-left: 0;
+}
+/*Kagkasidis*/
+.darkmode a {
+    text-decoration: underline;
+}
+/*Kagkasidis*/
+.programs-list li {
+    background-color: rgba(139, 69, 19, 0.03);
+    color: var(--color-body-primary);
+    margin-bottom: 12px;
+    padding: 18px 20px;
+    border-left: 3px solid #c0a080;
+    border-radius: 3px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+/*Kagkasidis*/
+body.darkmode .programs-list li {
+    background-color: var(--darkwhite--color-list);
+    color: var(--color-foreground);
+}
+/*Kagkasidis*/
+body.lightmode .programs-list li {
+    background-color: rgba(139, 69, 19, 0.03);
+    color: var(--color-body-primary);
+}
+/*Kagkasidis*/
+body.darkmode .programs-list ul {
+    background-color: var(--darkwhite--color-list);
+}
+
+.programs-list li:hover {
+    transform: translateX(5px);
+    background: rgba(139, 69, 19, 0.07);
+}
+
+#contact address {
+    font-style: normal;
+    line-height: 1.8;
+}
+
+footer {
+    background: #5D4037;
+    color: #d3c7b8;
+    text-align: center;
+    padding: 35px 0;
+    /*    margin-top: 50px;     Kagkasidis */
+    border-top: 1px solid #6f4f28;
+}
+/*Kagkasidis*/
+.darkmode footer {
+    background: var(--darkgrey--color-primary);
+    color: var(--color-foreground);
+    border-top: 1px var(--darkwhite--color-list);
+}
+/*Kagkasidis*/
+.lightmode footer {
+    background: #5D4037;
+    color: #d3c7b8;
+    border-top: 1px solid #6f4f28;
+}
+
+/* --- Projects Sidebar --- */
+.projects-sidebar {
+
+    /* position: fixed;
+            top: 0;
+            right: 0; */
+    max-width: 20%;/*Kagkasidis*/
+    min-width: 80px;/*Kagkasidis*/
+    /* Kagkasidis */
+    order: 3;   /*Kagkasidis*/
+    flex-direction: column; /*Kagkasidis*/
+    /* width: 280px;
+            height: 100vh; */
+    background: #d3c7b8;    /*Kagkasidis*/
+    backdrop-filter: blur(15px);
+    /* z-index: 999;  */
+    /* padding: 20px;
+            padding-top: 80px;  */
+    display: flex;
+    /* overflow-y: auto;  */
+}
+/*Kagkasidis*/
+body.darkmode .projects-sidebar {
+    background-color: var(--darkgrey--color-primary);
+    color: var(--dark--color-primary);
+}
+/*Kagkasidis*/
+body.lightmode .projects-sidebar {
+    background-color: #d3c7b8;
+    /* color: var(--dark--color-primary);🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 No need to change anything 🟧 */
+}
+
+/* .sidebar-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8em;
+            color: var(--accent-magenta);
+            text-shadow: var(--glow-magenta);
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 1px solid var(--accent-cyan);
+            padding-bottom: 10px;
+        } */
+
+/*Might need the list-style: none Needs testing🟥...fixed 🟩*/
+.project-list {
+    list-style: none;
+    /*            padding: 0; */
+}
+
+.project-item {
+    background: #d3c7b8;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border-left: 3px #d3c7b8;
+    /* #d3c7b8  Put standard color instead of non existent var Kagkasidis */
+    transition: transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+/*Kagkasidis*/
+body.darkmode .project-item {
+    background-color: var(--darkgrey--color-primary);
+    color: var(--darkgrey--color-primary);
+}
+/*Kagkasidis*/
+body.lightmode .project-item {
+    background: #d3c7b8;
+    /* color: var(--darkgrey--color-primary); */
+}
+
+.project-item:hover {
+    transform: translateX(-5px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.project-item h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #4a3b32;
+    /* #4a3b32 Put standard color Kagkasidis */
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+/*Kagkasidis*/
+.darkmode .project-item h4 {
+    color: var(--color-foreground);
+}
+/*Kagkasidis*/
+.lightmode .project-item h4 {
+    color: #4a3b32;
+}
+
+.project-item p {
+    font-size: 0.9em;
+    color: #4a3b32;
+    /* #4a3b32 Put standard color instead of undeclared myvar(--accent-cyan) Kagkasidis */
+    margin-bottom: 10px;
+}
+/*Kagkasidis*/
+body.darkmode .project-item p {
+    color: var(--color-foreground);
+}
+/*Kagkasidis*/
+body.lightmode .project-item p {
+    color: #4a3b32;
+}
+
+.project-item a {
+    color: #4a3b32;
+    /* #4a3b32 Put standard color instead of undeclared myvar(--accent-cyan) Kagkasidis */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+/*Kagkasidis*/
+body.darkmode .project-item a {
+    color: var(--color-foreground);
+    text-decoration: underline;
+}
+/*Kagkasidis*/
+body.lightmode .project-item a {
+    color: #4a3b32;
+    text-decoration: none;
+}
+
+.project-item a:hover {
+    color: #4a3b32;
+    /* #4a3b32 Put standard color instead of undeclared myvar(--accent-cyan) Kagkasidis */
+}
+
+/* Removed text shadow did not work Kagkasidis */
+
+/*Kagkasidis*/
+body.darkmode .project-item a:hover {
+    color: var(--color-foreground);
+}
+/*Kagkasidis*/
+body.lightmode .project-item a:hover {
+    color: #4a3b32;
+}
+/*Kagkasidis*/
+body.darkmode .project-item li {
+    background-color: var(--darkgrey--color-primary);
+    color: var(--darkgrey--color-primary);
+}
+
+/*  .project-item a i {
+            margin-left: 5px;
+        } Removed, tag <i> not being used Kagkasidis*/
+
+/* Πιο νωρις να αλλαξει η css για μεγαλες συσκευες αντι για 768px εβαλα 992px Kagkasidis */
+@media (max-width: 768px) {
+    /* header {
+        padding: 10px 0;
+    }
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-container {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .logo-container .subtitle {
+        margin-left: 0;
+        font-size: 0.8em;
+    } */
+/*Kagkasidis*/
+    .header {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+/*Kagkasidis*/
+    .header_content {
+        flex-direction: column;
+    }
+
+    /* .nav .logo{
+        flex-direction: column;
+     }*/
+
+    .nav_link {
+        font-size: auto;
+    }
+    /*Kagkasidis*/
+    .nav_item {
+        margin: 5px;
+    }
+
+
+    nav ul {
+        align-items: center;
+    }
+
+    /* nav ul li {
+        margin: 8px 0;
+    }
+    nav ul li a {
+        font-size: 1em;
+    } */
+
+    .hero-section {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 40px;
+        margin-top: 60px;
+    }
+
+    .hero-section h2 {
+        font-size: 2.2em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    h1 {
+        font-size: 2.0em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .content-section {
+        padding: 50px 0;
+    }
+
+    .projects-sidebar {
+        display: none;
+    }
+    /*Kagkasidis*/
+    .projects-list {
+        display: none;
+    }
+    /*Kagkasidis*/
+    .projects-item {
+        display: none;
+    }
+
+    /*Kagkasidis*/
+    .footertext {
+        color: #d3c7b8;
+    }
+}
+
+/*Kagkasidis Αυτοματο dark mode αναλογως τι ο χρηστης εχει ως browser theme dark ή light*/
+/* Kagkasidis */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark--color-primary);
+        color: var(--dark--color-background);
+    }
+
+    h1,
+    h2 {
+        color: var(--color-foreground);
+    }
+
+    body p {
+        color: var(--color-foreground);
+    }
+
+    a {
+        color: var(--color-foreground);
+    }
+
+    .header {
+        background-color: var(--darkgrey--color-primary);
+    }
+
+    .nav_link {
+        color: var(--color-foreground);
+    }
+
+    .nav_link {
+        color: var(--color-foreground);
+    }
+
+    .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+            url('images/entrance.jpg') no-repeat center center/cover;
+    }
+
+    .hero-section h2 {
+        color: var(--color-foreground);
+    }
+
+    .hero-section p {
+        color: var(--color-foreground);
+    }
+
+    .cta-button a {
+        text-decoration: underline;
+    }
+
+    .cta-button {
+        background: var(--dark--color-primary);
+        border: 1px solid var(--dark--color-primary);
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    .cta-button:hover {
+        background-color: var(--dark--color-primary);
+    }
+
+    #programs {
+        background-color: rgb(4, 3, 15);
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    body .programs-list li {
+        background-color: #080019;
+        color: var(--color-foreground);
+    }
+
+    body .programs-list ul {
+        background-color: var(--darkwhite--color-list);
+    }
+
+    footer {
+        background: var(--darkgrey--color-primary);
+        color: var(--color-foreground);
+        border-top: 1px var(--darkwhite--color-list);
+    }
+
+    body .projects-sidebar {
+        background-color: var(--darkgrey--color-primary);
+        color: var(--dark--color-primary);
+    }
+
+    body .project-item {
+        background-color: var(--darkgrey--color-primary);
+        color: var(--darkgrey--color-primary);
+    }
+
+    .project-item h4 {
+        color: var(--color-foreground);
+    }
+
+    body .project-item p {
+        color: var(--color-foreground);
+    }
+
+    body .project-item a {
+        color: var(--color-foreground);
+        text-decoration: underline;
+    }
+
+    body .project-item a:hover {
+        color: var(--color-foreground);
+    }
+
+    body .project-item li {
+        background-color: var(--darkgrey--color-primary);
+        color: var(--darkgrey--color-primary);
+    }
+}

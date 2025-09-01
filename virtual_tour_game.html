@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAEK Sindos Explorer - Εικονική Περιπέτεια</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="virtual_tour_game.css">
+</head>
+<body>
+    <div id="game-container">
+        <header id="game-hud">
+            <div class="hud-left">
+                <span id="current-location-hud">Φόρτωση...</span>
+            </div>
+            <div class="hud-center">
+                <span>Σύμβολα ΣΑΕΚ: </span>
+                <span id="crest-counter">0</span> / <span id="total-crests">0</span>
+            </div>
+            <div class="hud-right">
+                <!-- <button onclick="darkModeSwitch()">Toggle dark mode</button> No time to implement it here too Kagkasidis-->
+                <button id="mission-button" class="hud-button" aria-label="Εμφάνιση αποστολής">Αποστολή</button>
+                <button id="reset-progress-button" class="hud-button reset-button" aria-label="Επαναφορά προόδου">Επαναφορά</button>
+                <a href="side_project.html" class="hud-button back-to-main-site" aria-label="Επιστροφή στην αρχική σελίδα">Αρχική</a>
+            </div>
+        </header>
+
+        <main id="tour-view">
+            <div id="image-wrapper">
+                <img id="tour-image" src="" alt="Περιοχή Σχολής">
+                <div id="interactive-elements-container">
+                    {/* Hotspots and Crests will be injected here by JS */}
+                </div>
+                <div id="loading-overlay" class="loading-active">
+                    <div class="spinner"></div>
+                    <p>Φόρτωση Περιπέτειας...</p>
+                </div>
+            </div>
+        </main>
+
+        <nav id="navigation-controls">
+            <button id="prev-location" class="nav-arrow-button" aria-label="Προηγούμενη τοποθεσία">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <div id="thumbnail-gallery-container">
+                {/* Thumbnails will be injected here */}
+            </div>
+            <button id="next-location" class="nav-arrow-button" aria-label="Επόμενη τοποθεσία">
+                <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+        </nav>
+
+        <div id="modal-overlay" class="modal-hidden">
+            <div id="modal-content">
+                <button id="modal-close-button" aria-label="Κλείσιμο παραθύρου">×</button>
+                <h3 id="modal-title"></h3>
+                <div id="modal-body"></div>
+                <div id="modal-actions"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© <span id="currentYearVt"></span> Εξερεύνηση ΣΑΕΚ Σίνδου. Με επιφύλαξη παντός δικαιώματος.<b>®</b>.</p>
+    </footer>
+
+    <script src="virtual_tour_game.js"></script>
+    <script src="darkmodeSwitch.js"></script>
+</body>
+</html>
